@@ -1,0 +1,26 @@
+//create deployment nginx
+kubectl create deployment ngnix-depl --image=ngnix  
+
+//get replica set
+kubectl get rs
+
+//describe deployment
+kubectl describe deployment nginx-depl
+
+//edit deployment
+kubectl edit deployment nginx-depl
+
+//logs
+kubectl logs <pod id>
+
+//mongodb
+kubectl create deployment mongodb-depl --image=mongo 
+
+//exec
+kubectl exec -it <pod_name> -n namespace -- /bin/bash
+
+//delete
+kubectl delete deployment <deployment_name>
+
+//Example here:
+mongodb --> internal service --> mongoexpress --> external service
