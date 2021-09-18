@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: myingress
+  labels:
+    name: myingress
+spec:
+  rules:
+  - host: myapp.com  # should be a valid address point to node ip address
+    http:
+      paths:
+        backend:
+          service:
+            name: mongodb-service # internal service
+            port: 
+              number: 27017
